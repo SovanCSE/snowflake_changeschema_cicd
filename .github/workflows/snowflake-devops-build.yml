@@ -36,7 +36,7 @@ jobs:
       - name: Run schemachange 
         env:
          SF_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-         SF_USERNAME: ${{ secrets.SNOWFLAKE_USERNAME }}
+         SF_USERNAME: ${{ secrets.SNOWFLAKE_USER }}
          SF_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
          SF_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
          SF_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
@@ -49,7 +49,7 @@ jobs:
           echo "Step 2: installing schemachange"
           pip install schemachange
           echo "Step 3: running schemachange command"
-          schemachange -f $GITHUB_WORKSPACE/dbscripts -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c  $SF_DATABASE.SCHEMA_CHANGE.CHANGE_HISTORY --create-change-history    
+          schemachange -f $GITHUB_WORKSPACE/dbscripts -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c  $SF_DATABASE.SCHEMA_CHANGE.CHANGE_HISTORY --create-change-history-table    
           echo "This job's status is ${{ job.status }}."
           
       # Runs a single command using the runners shell
