@@ -43,9 +43,9 @@ jobs:
          SF_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
         run: |
           echo "GitHub Workspace: $GITHUB_WORKSPACE"
-          python --version
+          python3 --version
           echo "Step 1: upgrading pip package"
-          python -m pip install --upgrade pip
+          python3 -m pip install --upgrade pip
           echo "Step 2: installing schemachange"
           pip install schemachange
           echo "Step 3: running schemachange command"
