@@ -37,7 +37,7 @@ jobs:
         env:
          SF_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
          SF_USERNAME: ${{ secrets.SNOWFLAKE_USER }}
-         SF_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+         SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
          SF_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
          SF_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
          SF_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
